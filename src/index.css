@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Inter:wght@300;400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Cinzel", serif;
+  --font-sans: "Inter", sans-serif;
+  --color-bronze: #8b7355;
+  --color-bronze-light: #a68d6d;
+  --color-bronze-dark: #63523d;
+  --color-gold: #d4af37;
+  --color-gold-light: #f9e29c;
+}
+
+body {
+  @apply bg-neutral-950 text-neutral-200 font-sans antialiased relative;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
+  opacity: 0.05;
+  pointer-events: none;
+  z-index: 1;
+}
+
+h1, h2, h3, h4 {
+  @apply font-serif;
+}
+
+.bronze-gradient {
+  background: linear-gradient(135deg, var(--color-bronze-dark) 0%, var(--color-bronze) 50%, var(--color-bronze-light) 100%);
+}
+
+.gold-gradient {
+  background: linear-gradient(135deg, #63523d 0%, #d4af37 50%, #f9e29c 100%);
+}
+
+.animate-blob {
+  animation: blob 7s infinite;
+}
+
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+.animation-delay-4000 {
+  animation-delay: 4s;
+}
+
+@keyframes blob {
+  0% { transform: translate(0px, 0px) scale(1); }
+  33% { transform: translate(30px, -50px) scale(1.1); }
+  66% { transform: translate(-20px, 20px) scale(0.9); }
+  100% { transform: translate(0px, 0px) scale(1); }
+}
+
+.glass-panel {
+  @apply bg-neutral-900/40 backdrop-blur-xl border border-white/10 shadow-2xl;
+}
+
+.hover-glow:hover {
+  box-shadow: 0 0 20px rgba(139, 115, 85, 0.3);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-neutral-950;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-bronze/30 rounded-full hover:bg-bronze/50 transition-colors;
+}

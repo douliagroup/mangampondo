@@ -1,0 +1,5 @@
+{
+  "name": "Obsèques Manga Mpondo",
+  "description": "Application officielle pour les obsèques de Manga Mpondo Albert Fructueux - Famille Manga Mpondo",
+  "requestFramePermissions": ["microphone"]
+}
