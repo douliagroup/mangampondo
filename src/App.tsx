@@ -2,6 +2,7 @@ import { useState, useEffect, useRef, ReactNode, useMemo } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { GoogleGenAI } from "@google/genai";
 import Markdown from "react-markdown";
+import { PopupButton } from "@typeform/embed-react";
 import { 
   Mic, 
   MicOff, 
@@ -16,7 +17,8 @@ import {
   User,
   Heart,
   MessageCircle,
-  Sparkles
+  Sparkles,
+  PenTool
 } from "lucide-react";
 
 interface Message {
@@ -404,6 +406,10 @@ export default function App() {
             isPending
             onClick={() => handleCardClick("PROGRAMME DÉTAILLÉ")}
           />
+          
+          <div className="pt-4">
+            <TypeformButton />
+          </div>
         </div>
 
         <div className="pt-10 text-center">
@@ -594,6 +600,29 @@ export default function App() {
         </button>
       </div>
     </div>
+  );
+}
+
+function TypeformButton() {
+  return (
+    <PopupButton
+      id="A1ccGh3O" // ID réel du formulaire de condoléances
+      size={80}
+      className="w-full"
+    >
+      <motion.div 
+        whileHover={{ scale: 1.02, translateY: -2 }}
+        whileTap={{ scale: 0.98 }}
+        className="w-full flex items-center justify-center gap-3 p-5 rounded-xl border-2 border-gold/30 bg-gold/10 hover:bg-gold/20 transition-all duration-500 group shadow-lg shadow-gold/5"
+      >
+        <Heart className="text-gold animate-pulse" size={24} />
+        <div className="text-left">
+          <h4 className="text-[10px] font-bold text-gold tracking-[0.2em] uppercase">Livre d'Or</h4>
+          <p className="text-sm md:text-base text-white font-bold">Laisser un message de condoléances</p>
+        </div>
+        <ChevronRight size={18} className="text-gold ml-auto group-hover:translate-x-1 transition-transform" />
+      </motion.div>
+    </PopupButton>
   );
 }
 
