@@ -29,7 +29,8 @@
 }
 
 body {
-  @apply bg-neutral-950 text-neutral-200 font-sans antialiased relative;
+  @apply bg-neutral-950 text-neutral-200 font-sans antialiased relative overflow-x-hidden w-full;
+  touch-action: manipulation;
 }
 
 body::before {

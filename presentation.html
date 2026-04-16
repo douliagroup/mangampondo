@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Présentation - Albert Manga Mpondo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        @page {
+            size: A4;
+            margin: 0;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #ffffff;
+            color: #1a1a1a;
+        }
+        .serif {
+            font-family: 'Cinzel', serif;
+        }
+        .page {
+            width: 210mm;
+            height: 297mm;
+            padding: 20mm;
+            margin: 0 auto;
+            position: relative;
+            box-sizing: border-box;
+            page-break-after: always;
+            display: flex;
+            flex-direction: column;
+        }
+        .bronze-text { color: #8b7355; }
+        .bronze-bg { background-color: #8b7355; }
+        .gold-border { border-color: #d4af37; }
+        
+        .feature-card {
+            border-left: 3px solid #8b7355;
+            padding-left: 1.5rem;
+            margin-bottom: 2rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 print:bg-white">
+
+    <!-- PAGE 1: COUVERTURE -->
+    <div class="page bg-white shadow-2xl print:shadow-none">
+        <div class="flex-1 flex flex-col items-center justify-center text-center space-y-8">
+            <div class="w-64 h-64 rounded-full overflow-hidden border-4 gold-border shadow-2xl">
+                <img src="https://i.postimg.cc/d0fZr0H1/Manga_Mpondo_Albert_F.png" alt="Albert Manga Mpondo" class="w-full h-full object-cover">
+            </div>
+            
+            <div class="space-y-4">
+                <h1 class="serif text-5xl font-bold text-black leading-tight">Albert Manga Mpondo</h1>
+                <p class="serif text-xl text-gray-600 tracking-widest">1955 — 2026</p>
+                <div class="pt-6 space-y-2">
+                    <p class="text-sm bronze-text font-bold tracking-[0.2em] uppercase">Accès au Portail</p>
+                    <a href="https://mangampondo.vercel.app/" target="_blank" class="text-xl font-semibold text-gray-900 block hover:underline">https://mangampondo.vercel.app/</a>
+                    <p class="text-sm text-gray-500">Mot de passe : <span class="font-bold text-gray-800 tracking-widest">13579</span></p>
+                </div>
+            </div>
+            
+            <div class="w-24 h-1 bronze-bg mx-auto"></div>
+            
+            <div class="max-w-md">
+                <p class="text-gray-500 italic leading-relaxed">
+                    "Un sanctuaire digital dédié à l'excellence, à la mémoire et à la transmission d'un héritage prestigieux."
+                </p>
+            </div>
+        </div>
+        
+        <div class="text-center text-xs text-gray-400 uppercase tracking-widest pb-4">
+            Portail Mémoriel Officiel • Famille Mpondo Manga
+        </div>
+    </div>
+
+    <!-- PAGE 2: VISION & CONCEPT -->
+    <div class="page bg-white shadow-2xl print:shadow-none">
+        <div class="mb-12">
+            <h2 class="serif text-3xl border-b-2 gold-border pb-4 inline-block">Vision & Concept</h2>
+        </div>
+        
+        <div class="space-y-8 text-lg leading-relaxed text-gray-700">
+            <p>
+                Le portail mémoriel <strong>Albert Manga Mpondo</strong> n'est pas un simple site web, c'est une 
+                immersion technologique conçue pour honorer un homme dont la vie fut placée sous le signe de 
+                la rigueur, de l'élégance et du savoir.
+            </p>
+            
+            <div class="grid grid-cols-2 gap-8 mt-12">
+                <div class="space-y-4">
+                    <h3 class="serif bronze-text font-bold">L'Objectif</h3>
+                    <p class="text-sm">Offrir un espace de recueillement universel, accessible partout dans le monde, permettant de préserver la trace indélébile d'un parcours exceptionnel.</p>
+                </div>
+                <div class="space-y-4">
+                    <h3 class="serif bronze-text font-bold">L'Esthétique</h3>
+                    <p class="text-sm">Un design "Premium Dark" inspiré des codes du luxe et de la haute technologie, reflétant la carrière d'Albert au sein de géants comme IBM et Shell.</p>
+                </div>
+            </div>
+
+            <div class="mt-16 p-8 bg-gray-50 rounded-2xl border border-gray-100">
+                <h3 class="serif text-xl mb-4">Une Expérience Interactive</h3>
+                <p class="text-sm mb-6">L'application utilise les dernières avancées en Intelligence Artificielle pour créer un pont entre le passé et le présent.</p>
+                <ul class="text-sm space-y-3">
+                    <li class="flex items-center gap-3">
+                        <span class="w-2 h-2 bronze-bg rounded-full"></span>
+                        Interface fluide et responsive (Mobile & Desktop)
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <span class="w-2 h-2 bronze-bg rounded-full"></span>
+                        Navigation intuitive par catégories thématiques
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <span class="w-2 h-2 bronze-bg rounded-full"></span>
+                        Sécurité et confidentialité des échanges
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- PAGE 3: FONCTIONNALITÉS CLÉS -->
+    <div class="page bg-white shadow-2xl print:shadow-none">
+        <div class="mb-12">
+            <h2 class="serif text-3xl border-b-2 gold-border pb-4 inline-block">Fonctionnalités Majeures</h2>
+        </div>
+        
+        <div class="space-y-12">
+            <div class="feature-card">
+                <h3 class="serif text-xl font-bold mb-2">Le Gardien de la Mémoire (IA)</h3>
+                <p class="text-sm text-gray-600">
+                    Un agent conversationnel intelligent capable de narrer l'histoire d'Albert. Il intègre une reconnaissance vocale avancée, permettant aux visiteurs de poser leurs questions naturellement, comme lors d'un entretien solennel.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <h3 class="serif text-xl font-bold mb-2">Galerie Vidéo Immersive</h3>
+                <p class="text-sm text-gray-600">
+                    Un système de streaming intégré sans publicité, organisant les moments de vie en chapitres : Recueillement, Veillées, et Cérémonies. Une expérience visuelle pure et respectueuse.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <h3 class="serif text-xl font-bold mb-2">Livre d'Or Digital</h3>
+                <p class="text-sm text-gray-600">
+                    Un espace de témoignages où l'émotion se partage. Chaque message est une pierre ajoutée à l'édifice de sa mémoire, consultable par les générations futures.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <h3 class="serif text-xl font-bold mb-2">Archives Photographiques</h3>
+                <p class="text-sm text-gray-600">
+                    Une sélection de portraits haute définition mettant en lumière l'élégance naturelle et le charisme d'un homme qui a marqué son époque.
+                </p>
+            </div>
+        </div>
+
+        <div class="mt-auto pt-12 border-t border-gray-100 flex justify-between items-end">
+            <div>
+                <p class="serif text-sm bronze-text font-bold">Portail Mémoriel</p>
+                <p class="text-[10px] text-gray-400 uppercase tracking-widest">Conception & Réalisation 2026</p>
+            </div>
+            <div class="text-right">
+                <p class="text-[10px] text-gray-400">Page 3 / 3</p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

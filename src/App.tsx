@@ -179,7 +179,7 @@ function LoginGate() {
         {/* Animated Border/Glow Effect - More intense */}
         <div className="absolute -inset-1 bg-gradient-to-r from-white/0 via-white/30 to-white/0 rounded-3xl blur-xl opacity-20 group-hover:opacity-40 transition duration-1000"></div>
         
-        <div className="relative bg-white/[0.03] backdrop-blur-3xl p-8 md:p-10 rounded-3xl border border-white/10 shadow-[0_0_80px_-15px_rgba(255,255,255,0.05)] overflow-hidden">
+        <div className="relative bg-white/[0.03] backdrop-blur-3xl p-5 sm:p-8 md:p-10 rounded-3xl border border-white/10 shadow-[0_0_80px_-15px_rgba(255,255,255,0.05)] overflow-hidden">
           {/* Decorative glass highlight */}
           <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
           
@@ -359,7 +359,7 @@ function VideoRow({ title, videos, onVideoSelect }: { title: string, videos: any
 
   return (
     <div className="space-y-4 relative group">
-      <h3 className="text-xl font-serif text-neutral-200 px-6 md:px-12">{title}</h3>
+      <h3 className="text-xl font-serif text-neutral-200 px-4 sm:px-6 md:px-12">{title}</h3>
       
       <div className="relative">
         <button 
@@ -371,7 +371,7 @@ function VideoRow({ title, videos, onVideoSelect }: { title: string, videos: any
 
         <div 
           ref={rowRef}
-          className="flex gap-4 overflow-x-auto px-6 md:px-12 no-scrollbar scroll-smooth"
+          className="flex gap-4 overflow-x-auto px-4 sm:px-6 md:px-12 no-scrollbar scroll-smooth"
         >
           {videos.map((video) => (
             <motion.div 
@@ -477,7 +477,7 @@ function BiographyModal({ isOpen, onClose }: { isOpen: boolean, onClose: () => v
 
         {/* Content to capture */}
         <div className="flex-1 overflow-y-auto no-scrollbar">
-          <div ref={pdfRef} className="p-8 md:p-16 space-y-16 bg-black text-white">
+          <div ref={pdfRef} className="p-6 sm:p-8 md:p-16 space-y-16 bg-black text-white">
             {/* Section 1: Intro */}
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div className="space-y-6">
@@ -592,7 +592,7 @@ function BiographyModal({ isOpen, onClose }: { isOpen: boolean, onClose: () => v
 
 function PhotoSection() {
   return (
-    <div className="px-6 md:px-12 py-12 space-y-8">
+    <div className="px-4 sm:px-6 md:px-12 py-12 space-y-8">
       <h3 className="text-2xl font-serif text-white">Galerie de Souvenirs</h3>
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
         {PHOTOS.map((photo) => (
@@ -662,7 +662,7 @@ function Guestbook() {
   };
 
   return (
-    <div className="px-6 md:px-12 py-12 bg-neutral-950/50 border-t border-white/5">
+    <div className="px-4 sm:px-6 md:px-12 py-12 bg-neutral-950/50 border-t border-white/5">
       <div className="max-w-4xl mx-auto space-y-12">
         <div className="text-center space-y-4">
           <h3 className="text-3xl font-serif text-white">Livre d'Or</h3>
@@ -1049,13 +1049,13 @@ function Dashboard() {
         />
         <div className="absolute inset-0 hero-gradient"></div>
         
-        <div className="absolute bottom-20 left-6 md:left-12 max-w-2xl space-y-6">
+        <div className="absolute bottom-20 left-4 sm:left-6 md:left-12 max-w-2xl space-y-6">
           <motion.div 
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             className="space-y-2"
           >
-            <h1 className="text-5xl md:text-7xl font-serif font-bold leading-tight">
+            <h1 className="text-4xl sm:text-5xl md:text-7xl font-serif font-bold leading-tight">
               Albert Mpondo Manga
             </h1>
             <p className="text-xl md:text-2xl text-neutral-300 font-light italic">
