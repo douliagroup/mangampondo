@@ -106,13 +106,13 @@ const PHOTOS = [
 ];
 
 const GUESTBOOK_ENTRIES = [
-  { id: "1", name: "Cathy", relation: "Fille", message: "Papa... ce mot que mes lèvres ne prononceront plus de la même façon, ce mot qui résonne désormais dans le silence. Tu m'as laissé le plus beau : la certitude d'avoir été aimée, l'ancrage culturel et familial fort et la chance d'avoir été portée par un homme de foi, un homme de principes, un homme dont l'ombre protectrice ne me quittera jamais.", date: "Avril 2026" },
-  { id: "2", name: "Manou", relation: "Neveu", message: "Mon cher tonton, Tu as été bien plus qu’un oncle : un mentor éclairé, un guide bienveillant et un père de cœur qui m’a façonné par tes précieux conseils et la transmission généreuse de ton expérience. Grâce à toi, je suis devenu l’homme que je suis aujourd’hui.", date: "Avril 2026" },
+  { id: "1", name: "Cathy", relation: "Fille", message: "Papa… ce mot que mes lèvres ne prononceront plus de la même façon, ce mot qui résonne désormais dans le silence. Tu n’es plus là, et pourtant tu es partout — dans ce que je suis, dans ce que je porte. Tu m’as laissé le plus beau : la certitude d’avoir été aimée, l’ancrage culturel et familial fort et la chance d’avoir été portée par un homme de foi, un homme de principes, un homme dont l’ombre protectrice ne me quittera jamais. Mon Papa.", date: "Avril 2026" },
+  { id: "2", name: "Manou", relation: "Fiston affectionné", message: "Mon cher tonton, Tu as été bien plus qu’un oncle : un mentor éclairé, un guide bienveillant et un père de cœur qui m’a façonné par tes précieux conseils et la transmission généreuse de ton expérience. Grâce à toi, je suis devenu l’homme que je suis aujourd’hui. Merci pour tout, du fond du cœur. Ton fiston affectionné.", date: "Avril 2026" },
   { id: "3", name: "Nyango Lili", relation: "Famille", message: "Le bâton d'encens de manga-kéty nous a offert 70 années son parfum de sobriété de simplicité, de tempérance, d'écoute, qui jamais ne se consumera.", date: "Avril 2026" },
-  { id: "4", name: "BASSIROU Diagne", relation: "Ami & Condisciple", message: "Albert mon ami, mon condisciple de Grenoble. Nous nous sommes connus, il y a 50 ans et nous avons tout de suite développé une connivence et ensuite une amitié forte qui ne s’est jamais démentie. Tu m´as fait l´insigne honneur de donner mon nom à ton fils, il n´y a pas plus belle preuve d´amitié.", date: "Avril 2026" },
-  { id: "5", name: "Michou", relation: "Cousin & Ami", message: "À Dou, malgré la distance et l’absence, tu es et resteras pour moi un cousin, un frère et surtout un ami. Je repense à toutes ces histoires vécues ensemble, notamment ton arrivée à Orléans et cette affaire de pommes. Tu aimais débattre de tout sans vouloir imposer ton point de vue mais pour donner une autre perspective.", date: "Avril 2026" },
-  { id: "6", name: "SIG", relation: "Ami & Confident", message: "Quelle façon bien étrange pour toi de terminer ton voyage sur terre ! Tu as été mon ami mon pilier, mon complice et mon confident. Ta trajectoire, jamais monotone a pourtant été un hymne à la joie (de vivre). Tu étais digne d’être aimé.", date: "Avril 2026" },
-  { id: "7", name: "Moukouri", relation: "Ami", message: "A Dou, comme on s’appelait, était une marque d’affection partagée qui restera car une belle amitié ne meurt pas. Elle continue de vivre parce que les souvenirs font partie de notre vie. Ils me permettront de continuer à te parler et à te faire vivre en moi.", date: "Avril 2026" },
+  { id: "4", name: "BASSIROU Diagne", relation: "Ami & Condisciple", message: "Albert mon ami, mon condisciple de Grenoble. Nous nous sommes connus, il y a 50 ans et nous avons tout de suite développé une connivence et ensuite une amitié forte qui ne s’est jamais démentie. Tu m´as fait l´insigne honneur de donner mon nom à ton fils, il n´y a pas plus belle preuve d´amitié. Tu es parti mon frère mais je garde toujours présent dans mon esprit et dans mon cœur, nos moments inoubliables d´étudiants à la fin des années 70. Pars en paix, Albert, tu fus un homme de bien. Que la terre te soit légère et que le paradis céleste soit ta demeure éternelle par la grâce de Dieu.", date: "Avril 2026" },
+  { id: "5", name: "Michou", relation: "Cousin & Ami", message: "À Dou, Malgré la distance et l’absence, tu es et resteras pour moi un cousin, un frère et surtout un ami. Je repense à toutes ces histoires vécues ensemble, notamment ton arrivée à Orléans et cette affaire de pommes. Tu disais vouloir te venger car elles étaient un fruit de luxe au pays. Je repense à nos discutions chaque fois que nous nous retrouvions après plusieurs années, on avait l’impression de s’être vus la veille et comme d’habitude on refaisait le monde. Je repense au ton calme et sérieux que tu prenais quand tu te lançais dans une analyse avec toujours cette volonté d’élever le débat. Tu aimais débattre de tout sans vouloir imposer ton point de vue mais pour donner une autre perspective.", date: "Avril 2026" },
+  { id: "6", name: "Moukouri", relation: "Ami", message: "A Dou. Comme on s’appelait, était une marque d’affection partagée qui restera car une belle amitié ne meurt pas. Elle continue de vivre parce que les souvenirs font partie de notre vie. Et des souvenirs j’en ai gardé un paquet. Ils me permettront de continuer à te parler et à te faire vivre en moi car bien que tu sois parti tu resteras toujours présent.", date: "Avril 2026" },
+  { id: "7", name: "SIG", relation: "Ami & Confident", message: "Quelle façon bien étrange pour toi de terminer son voyage sur terre ! Tu as été mon ami mon pilier, mon complice et mon confident. Ta trajection, jamais monotone a pourtant été un hymne à la joie (de vivre). Tu étais digne d’être aimé, et nous t’aimons et t’aimerons toujours. Va, mon frère, que la terre de Dieu, dont nos ancêtres sont les gardiens éternels te fassent entrer dans la Félicité de ton créateur.", date: "Avril 2026" },
 ];
 
 // --- Components ---
@@ -746,18 +746,9 @@ function Guestbook() {
   const { userData } = useAuth();
 
   const fetchEntries = async () => {
-    try {
-      const data = await airtable.getTestimonies();
-      if (data.length > 0) {
-        setEntries(data);
-      } else {
-        setEntries(GUESTBOOK_ENTRIES);
-      }
-    } catch (error) {
-      setEntries(GUESTBOOK_ENTRIES);
-    } finally {
-      setIsLoading(false);
-    }
+    // Only show official entries as requested
+    setEntries(GUESTBOOK_ENTRIES);
+    setIsLoading(false);
   };
 
   useEffect(() => {
@@ -869,28 +860,30 @@ function Guestbook() {
 }
 
 const SYSTEM_INSTRUCTION = `Tu es le [B]GARDIEN DE LA MÉMOIRE[/B] d'Albert Mpondo Manga, s'exprimant au nom de la FAMILLE ENDEUILLÉE.
-Ton rôle est d'accueillir les visiteurs avec une immense dignité, empathie et respect, en préservant l'héritage d'un homme d'exception.
+Ton rôle est d'accueillir les visiteurs avec une immense dignité, empathie et respect.
 
-👤 [B]PROFIL DÉTAILLÉ DU DÉFUNT[/B] : Albert MANGA MPONDO Fructueux (Surnomné PORO).
-- Dates : 16 Avril 1955 (Douala) - 1er Mars 2026 (Yaoundé).
-- Parents : Clément Manga Mpondo & Catherine Ngobo Lottin.
-- Fratrie : 2ème d'une fratrie de 6 enfants.
-- Éducation : BEPC (Kribi, 1971), Bac C (Nkongsamba, 1974), CAPCEG Mathématiques (ENS Yaoundé, 1976), DEUG Math/Physique (Orléans, 1978), Maîtrise Informatique (Grenoble, 1980), Doctorat Informatique des Organisations (Paris IX Dauphine, 1984).
-- Carrière : IBM France (Centre Scientifique), SHELL Cameroun (Chef de Service Info dès 1984), Associé Gérant ASI CAMEROUN (dès 1990). Expert Consultant (Minfi, SEGIPES, Crédit Agricole, SONARA, SNH, MAETUR, Crédit Foncier).
-- Qualités : Mémoire phénoménale, sens pointu de la dialectique, connaissance du terroir, athlète passionné (marches de +20km, Mont Cameroun).
-- Famille : Père de Cathy et Bass. Grand-père de Malik, Alexis et Jeanne.
+👤 [B]BIOGRAPHIE OFFICIELLE[/B] : Albert MANGA MPONDO Fructueux (Surnommé PORO).
+- [B]Naissance[/B] : 16 Avril 1955 à Douala.
+- [B]Parents[/B] : Clément Manga Mpondo & Catherine Ngobo Lottin.
+- [B]Éducation[/B] : Études au Cameroun (Douala, Maroua, Garoua, Yaoundé, Nkongsamba, Kribi). BEPC (1971), Bac C (1974). CAPCEG Mathématiques (ENS Yaoundé, 1976).
+- [B]Parcours en France[/B] : DEUG Math/Physique (Orléans, 1978), Maîtrise Informatique (Grenoble, 1980), Doctorat Informatique des Organisations (Paris IX Dauphine, 1984).
+- [B]Carrière[/B] : IBM France (Centre Scientifique), SHELL Cameroun (Chef de Service Info dès 1984), Associé Gérant ASI CAMEROUN (depuis 1990).
+- [B]Expertise[/B] : Consultant pour Minfi, SEGIPES, Crédit Agricole, SONARA, SNH, MAETUR, LABOGENIE, Crédit Foncier.
+- [B]L'Athlète[/B] : Passionné de marche (+20km hebdomadaires) et connu pour ses exploits sur le [B]Mont Cameroun[/B].
+- [B]Décès[/B] : S'est éteint le 1er Mars 2026 à Yaoundé.
+- [B]Héritage familial[/B] : Laisse ses enfants Cathy et Bass, et ses petits-enfants Malik, Alexis et Jeanne.
 
-🕯️ [B]MISSION DE MÉMOIRE[/B] :
-Les obsèques ayant déjà eu lieu, ton rôle est désormais focalisé sur la [B]CÉLÉBRATION DE SA VIE[/B] et la [B]TRANSMISSION DE SON HÉRITAGE[/B]. 
-- Tu peux citer des extraits des témoignages de ses proches (Cathy, Manou, Bassirou, Michou, SIG) pour illustrer sa grandeur.
-- Encourage les visiteurs à explorer sa biographie pour découvrir l'homme, l'expert et l'athlète qu'il était.
+🕯️ [B]TÉMOIGNAGES DE RÉFÉRENCE[/B] (Tu peux les citer pour illustrer sa personnalité) :
+- [B]Cathy (sa fille)[/B] : Parle de son "ombre protectrice", de son ancrage culturel et de sa foi. Elle dit qu'il est "partout dans ce qu'elle est".
+- [B]Manou (neveu)[/B] : Le décrit comme un "mentor éclairé" et un "père de cœur".
+- [B]Bassirou Diagne (ami)[/B] : Ami depuis 50 ans (Grenoble). Témoigne d'une amitié si forte qu'Albert a donné le nom de Bassirou à son propre fils.
+- [B]Michou (cousin)[/B] : Évoque ses analyses calmes, son sérieux et sa volonté d'élever le débat sans jamais rien imposer.
+- [B]SIG (ami)[/B] : Parle d'un "hymne à la joie de vivre" et d'un homme "digne d'être aimé".
 
-🔴 [B]CONSIGNES DE FORMATION ET FORMATAGE (STRICTES)[/B] :
-- POLICE : Inter (sans-serif).
-- MISE EN GRAS : Utilise EXCLUSIVEMENT les balises [B] et [/B] pour les MOTS CLÉS et les TITRES.
-- INTERDICTION ABSOLUE : N'utilise JAMAIS d'astérisques (*), de dièses (#) ou de tirets de liste standards (-). 
-- STRUCTURE : Sépare tes paragraphes par des doubles sauts de ligne pour un texte AÉRÉ.
-- TON : Solennel, digne, tourné vers la mémoire et l'héritage.`;
+🔴 [B]CONSIGNES DE FORMATION[/B] :
+- POLICE : Inter.
+- FORMATAGE : Utilise [B] et [/B] pour le gras. JAMAIS d'astérisques ou de dièses.
+- TON : Solennel et bienveillant. Focalise-toi sur la célébration de sa vie, car les obsèques sont terminées.`;
 
 function ChatbotWidget() {
   const { userData, isChatOpen, setIsChatOpen } = useAuth();
@@ -1309,10 +1302,6 @@ function Dashboard() {
         <div className="separator px-24"></div>
 
         <PhotoSection />
-
-        <div className="separator px-24"></div>
-
-        <HeritageSection />
 
         <div className="separator px-24"></div>
 
