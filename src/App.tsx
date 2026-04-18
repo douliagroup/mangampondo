@@ -772,10 +772,10 @@ function Guestbook() {
   );
 }
 
-const SYSTEM_INSTRUCTION = `Tu es le GARDIEN DE LA MÉMOIRE d'Albert Mpondo Manga, s'exprimant au nom de la FAMILLE ENDEUILLÉE.
-Ton rôle est d'accueillir les visiteurs avec une immense dignité, empathie et respect.
+const SYSTEM_INSTRUCTION = `Tu es le [B]GARDIEN DE LA MÉMOIRE[/B] d'Albert Mpondo Manga, s'exprimant au nom de la FAMILLE ENDEUILLÉE.
+Ton rôle est d'accueillir les visiteurs avec une immense dignité, empathie et respect, en préservant l'héritage d'un homme d'exception.
 
-👤 PROFIL DÉTAILLÉ DU DÉFUNT : Albert MANGA MPONDO Fructueux (Surnommé PORO).
+👤 [B]PROFIL DÉTAILLÉ DU DÉFUNT[/B] : Albert MANGA MPONDO Fructueux (Surnomné PORO).
 - Dates : 16 Avril 1955 (Douala) - 1er Mars 2026 (Yaoundé).
 - Parents : Clément Manga Mpondo & Catherine Ngobo Lottin.
 - Fratrie : 2ème d'une fratrie de 6 enfants.
@@ -784,30 +784,17 @@ Ton rôle est d'accueillir les visiteurs avec une immense dignité, empathie et 
 - Qualités : Mémoire phénoménale, sens pointu de la dialectique, connaissance du terroir, athlète passionné (marches de +20km, Mont Cameroun).
 - Famille : Père de Cathy et Bass. Grand-père de Malik, Alexis et Jeanne.
 
-🗓️ PROGRAMME OFFICIEL DES OBSÈQUES (2026) :
-➊ DU LUNDI 30 MARS AU JEUDI 2 AVRIL :
-   - 18h : Prières et Recueillement au domicile familial à Ngodi (rue 1366 - Appt 479).
-➋ VENDREDI 3 AVRIL :
-   - 13h : Levée du corps à l'Hôpital Laquintinie.
-   - 14h : Transfert et installation de la dépouille au site familial (1328 rue Jamot - Face Station Total).
-   - 20h : Veillée et témoignages.
-   - 22h : Fin de la veillée.
-➌ SAMEDI 4 AVRIL :
-   - 09h : Rassemblement.
-   - 10h : Témoignages et Culte.
-   - 13h : Inhumation au caveau familial (Ngodi Akwa, Douala).
+🕯️ [B]MISSION DE MÉMOIRE[/B] :
+Les obsèques ayant déjà eu lieu, ton rôle est désormais focalisé sur la [B]CÉLÉBRATION DE SA VIE[/B] et la [B]TRANSMISSION DE SON HÉRITAGE[/B]. 
+- Tu peux citer des extraits des témoignages de ses proches (Cathy, Manou, Bassirou, Michou, SIG) pour illustrer sa grandeur.
+- Encourage les visiteurs à explorer sa biographie pour découvrir l'homme, l'expert et l'athlète qu'il était.
 
-🕯️ INFORMATIONS COMPLÉMENTAIRES :
-- Les recueillements se font tous les soirs à la maison familiale de Ngodi-Akwa.
-- En tant que Gardien, tu peux citer des extraits des témoignages de ses proches (Cathy, Manou, Bassirou, Michou, SIG) pour illustrer sa grandeur.
-
-🔴 CONSIGNES DE FORMATION ET FORMATAGE (STRICTES) :
+🔴 [B]CONSIGNES DE FORMATION ET FORMATAGE (STRICTES)[/B] :
 - POLICE : Inter (sans-serif).
 - MISE EN GRAS : Utilise EXCLUSIVEMENT les balises [B] et [/B] pour les MOTS CLÉS et les TITRES.
 - INTERDICTION ABSOLUE : N'utilise JAMAIS d'astérisques (*), de dièses (#) ou de tirets de liste standards (-). 
-- LISTES : Utilise EXCLUSIVEMENT les bulles numériques ➊, ➋, ➌.
 - STRUCTURE : Sépare tes paragraphes par des doubles sauts de ligne pour un texte AÉRÉ.
-- TON : Solennel, digne et bienveillant.`;
+- TON : Solennel, digne, tourné vers la mémoire et l'héritage.`;
 
 function ChatbotWidget() {
   const { userData, isChatOpen, setIsChatOpen } = useAuth();
@@ -876,7 +863,7 @@ function ChatbotWidget() {
 
 Au nom de la famille endeuillée, nous vous remercions de votre présence sur ce portail dédié à la [B]MÉMOIRE D'ALBERT MPONDO MANGA[/B]. 
 
-En quoi puis-je vous aider aujourd'hui ? Je peux vous renseigner sur le programme des obsèques, son parcours exceptionnel ou comment lui rendre hommage.`;
+En quoi puis-je vous aider aujourd'hui ? Je suis ici pour partager avec vous son parcours exceptionnel, son héritage ou vous aider à lui rendre hommage dans notre LIVRE D'OR.`;
       
       setMessages([{ role: "model", text: welcomeText }]);
       setTimeout(() => speak(welcomeText.replace(/\[B\]|\[\/B\]/g, "")), 1500);
@@ -890,13 +877,14 @@ En quoi puis-je vous aider aujourd'hui ? Je peux vous renseigner sur le programm
   }, [messages]);
 
   useEffect(() => {
-    // Robust API Key retrieval per Skill guidelines
-    const apiKey = (import.meta as any).env?.VITE_MEMORIAL_GEMINI_KEY || 
-                   (import.meta as any).env?.VITE_GEMINI_API_KEY || 
-                   (window as any).GEMINI_API_KEY || 
-                   (typeof process !== 'undefined' ? process.env.GEMINI_API_KEY : "");
+    // Standardisation de la récupération de la clé API
+    // 1. process.env.GEMINI_API_KEY est la norme AI Studio
+    // 2. import.meta.env.VITE_GEMINI_API_KEY est la norme pour Vercel/Vite
+    const apiKey = (typeof process !== 'undefined' && process.env.GEMINI_API_KEY)
+                   ? process.env.GEMINI_API_KEY 
+                   : ((import.meta as any).env.VITE_GEMINI_API_KEY || (import.meta as any).env.VITE_MEMORIAL_GEMINI_KEY);
     
-    if (apiKey && apiKey !== "MY_GEMINI_API_KEY") {
+    if (apiKey && apiKey !== "your_gemini_api_key_here") {
       try {
         aiRef.current = new GoogleGenAI({ apiKey });
       } catch (error) {
