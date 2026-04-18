@@ -1,5 +1,5 @@
 {
-  "name": "Obsèques Manga Mpondo",
-  "description": "Application officielle pour les obsèques de Manga Mpondo Albert Fructueux - Famille Manga Mpondo",
+  "name": "Mémorial Albert Mpondo Manga",
+  "description": "Portail Mémoriel officiel - Famille Manga Mpondo",
   "requestFramePermissions": ["microphone"]
 }

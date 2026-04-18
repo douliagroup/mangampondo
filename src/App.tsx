@@ -642,6 +642,102 @@ function PhotoSection() {
   );
 }
 
+function HeritageSection() {
+  const [docs, setDocs] = useState<airtable.HeritageDocument[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchDocs = async () => {
+      try {
+        const data = await airtable.getHeritageDocuments();
+        setDocs(data);
+      } catch (error) {
+        console.error("Error fetching heritage docs:", error);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+    fetchDocs();
+  }, []);
+
+  if (!isLoading && docs.length === 0) return null;
+
+  return (
+    <div className="px-4 sm:px-6 md:px-12 py-24 relative z-20 overflow-hidden">
+      {/* Background decoration */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-white/[0.02] rounded-full blur-[150px] -z-10"></div>
+      
+      <div className="max-w-7xl mx-auto space-y-16">
+        <div className="flex flex-col md:flex-row items-end justify-between gap-8 border-b border-white/5 pb-12">
+          <div className="space-y-4 text-center md:text-left">
+            <h3 className="text-4xl md:text-5xl font-serif text-white tracking-tight">Archives & Héritage</h3>
+            <p className="text-neutral-500 uppercase tracking-[0.4em] text-[10px]">Découvrez les documents officiels et les souvenirs d'une vie</p>
+          </div>
+          <div className="flex items-center gap-2 text-neutral-500 uppercase tracking-widest text-[9px] font-bold">
+            <span className="w-1.5 h-1.5 rounded-full bg-white/20"></span>
+            {docs.length} Documents Disponibles
+          </div>
+        </div>
+
+        {isLoading ? (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[1, 2, 3, 4].map(i => (
+              <div key={i} className="h-64 glass rounded-3xl animate-pulse"></div>
+            ))}
+          </div>
+        ) : (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+            {docs.map((doc, idx) => (
+              <motion.div 
+                key={doc.id}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: idx * 0.1 }}
+                className="group relative glass p-8 rounded-[2rem] border border-white/5 hover:border-white/20 transition-all duration-700 flex flex-col justify-between min-h-[300px] overflow-hidden"
+              >
+                {/* Visual Accent */}
+                <div className="absolute -top-12 -right-12 w-32 h-32 bg-white/[0.03] rounded-full blur-2xl group-hover:bg-white/[0.07] transition-all duration-700"></div>
+                
+                <div className="space-y-6 relative">
+                  <div className="w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center text-white/40 group-hover:bg-white/10 group-hover:text-white transition-all duration-500 border border-white/5">
+                    <Download size={24} strokeWidth={1.5} />
+                  </div>
+                  
+                  <div className="space-y-2">
+                    <span className="text-[10px] uppercase tracking-[0.2em] text-neutral-500 font-bold">{doc.categorie}</span>
+                    <h4 className="text-xl font-serif text-white tracking-wide leading-tight group-hover:text-white transition-colors capitalize">{doc.titre}</h4>
+                  </div>
+                  
+                  {doc.annee && (
+                    <div className="flex items-center gap-2 text-[11px] text-neutral-400 font-mono">
+                      <Calendar size={12} className="opacity-50" />
+                      {doc.annee}
+                    </div>
+                  )}
+                </div>
+
+                <div className="pt-8 relative">
+                  <a 
+                    href={doc.fichierUrl} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-between w-full bg-white text-black px-6 py-4 rounded-2xl font-bold text-xs group/btn overflow-hidden relative shadow-2xl shadow-black/40"
+                  >
+                    <div className="absolute inset-0 bg-neutral-100 translate-y-full group-hover/btn:translate-y-0 transition-transform duration-300"></div>
+                    <span className="relative z-10">Consulter</span>
+                    <ChevronRight className="relative z-10 transition-transform group-hover/btn:translate-x-1" size={16} />
+                  </a>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
+
 function Guestbook() {
   const [newEntry, setNewEntry] = useState("");
   const [entries, setEntries] = useState<any[]>([]);
@@ -1213,6 +1309,10 @@ function Dashboard() {
         <div className="separator px-24"></div>
 
         <PhotoSection />
+
+        <div className="separator px-24"></div>
+
+        <HeritageSection />
 
         <div className="separator px-24"></div>
 
